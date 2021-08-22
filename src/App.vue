@@ -148,6 +148,9 @@ const useSqlOption = () => {
   [{ activeText: "SSH Tunnel" }, { activeText: "Use SSL" }].forEach((item) => {
     switchComponents.push(useElFormSwitch({ activeText: item.activeText }));
   });
+
+  const connection = useElButton({ text: "Connection" });
+  const close = useElButton({ text: "Close" });
   const elFormStyle = {
     inline: true,
     labelWidth: "200px",
@@ -169,7 +172,10 @@ const useSqlOption = () => {
               return <item.template />;
             })}
         </el-form>
-        <div></div>
+        <div>
+          <connection.template />
+          <close.template />
+        </div>
       </>
     ),
   };
